@@ -1,4 +1,4 @@
-#bloquea directorios del proyecto
+#bloquea directorios del proyecto (Que no aparezca en el navegador la ruta indexada)
 Options ALL -Indexes
 #para poder utilizar rewriterule
 RewriteEngine on

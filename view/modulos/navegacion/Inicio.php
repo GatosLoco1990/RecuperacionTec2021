@@ -53,7 +53,7 @@
                         <!-- /.col -->
                         <div class="col-4"> </div>
                         <div class="col-4">
-                            <button type="submit" class="btn btn-primary btn-block">Iniciar</button>
+                            <button type="button" class="btn btn-primary btn-block" ><a href="dashboard">Iniciar</a></button>
                         </div>
                         <div class="col-4"> </div>
                         <!-- /.col -->

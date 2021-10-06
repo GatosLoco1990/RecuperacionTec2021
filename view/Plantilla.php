@@ -2,15 +2,20 @@
 if (isset($_GET["ubicacion"])) {
     if ($_GET["ubicacion"] == "Inicio") {
         include "modulos/navegacion/" . $_GET["ubicacion"] . ".php";
-    } else if ($_GET["ubicacion"] == "dashboard" || $_GET["ubicacion"] == "Ver-categoria" ||
-      $_GET["ubicacion"] == "Registrar-categoria" || $_GET["ubicacion"] == "Registrar-venta") { ?>
+    } else if (
+        $_GET["ubicacion"] == "dashboard" || $_GET["ubicacion"] == "Ver-categoria" ||
+        $_GET["ubicacion"] == "Registrar-categoria" || $_GET["ubicacion"] == "Registrar-venta" ||
+        $_GET["ubicacion"] == "Historial-venta" || $_GET["ubicacion"] == "faq" || $_GET["ubicacion"] == "Contactanos" ||
+        $_GET["ubicacion"] == "Ver-categoria-cliente" || $_GET["ubicacion"] == "Historial-compra" || $_GET["ubicacion"] == "Quienes" ||
+        $_GET["ubicacion"] == "Perfil"
+    ) { ?>
         <!DOCTYPE html>
         <html lang="es">
 
         <head>
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1">
-            <title>AdminLTE 3 | Dashboard</title>
+            <title>OlimpicaRGV | Dashboard</title>
 
             <!-- Google Font: Source Sans Pro -->
             <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -32,6 +37,10 @@ if (isset($_GET["ubicacion"])) {
             <link rel="stylesheet" href="view/presentacion/plugins/daterangepicker/daterangepicker.css">
             <!-- summernote -->
             <link rel="stylesheet" href="view/presentacion/plugins/summernote/summernote-bs4.min.css">
+            <!-- DataTables -->
+            <link rel="stylesheet" href="view/presentacion/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+            <link rel="stylesheet" href="view/presentacion/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+            <link rel="stylesheet" href="view/presentacion/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
         </head>
 
         <body class="hold-transition sidebar-mini layout-fixed">
@@ -80,9 +89,41 @@ if (isset($_GET["ubicacion"])) {
             <script src="view/presentacion/dist/js/pages/dashboard.js"></script>
             <!-- bs-custom-file-input -->
             <script src="view/presentacion/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+            <!-- DataTables  & Plugins -->
+            <script src="view/presentacion/plugins/datatables/jquery.dataTables.min.js"></script>
+            <script src="view/presentacion/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+            <script src="view/presentacion/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+            <script src="view/presentacion/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+            <script src="view/presentacion/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+            <script src="view/presentacion/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+            <script src="view/presentacion/plugins/jszip/jszip.min.js"></script>
+            <script src="view/presentacion/plugins/pdfmake/pdfmake.min.js"></script>
+            <script src="view/presentacion/plugins/pdfmake/vfs_fonts.js"></script>
+            <script src="view/presentacion/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+            <script src="view/presentacion/plugins/datatables-buttons/js/buttons.print.min.js"></script>
+            <script src="view/presentacion/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
             <script>
                 $(function() {
                     bsCustomFileInput.init();
+                });
+            </script>
+            <script>
+                $(function() {
+                    $("#example1").DataTable({
+                        "responsive": true,
+                        "lengthChange": false,
+                        "autoWidth": false,
+                        "buttons": ["excel", "pdf", "print"]
+                    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+                    $('#example2').DataTable({
+                        "paging": true,
+                        "lengthChange": false,
+                        "searching": false,
+                        "ordering": true,
+                        "info": true,
+                        "autoWidth": false,
+                        "responsive": true,
+                    });
                 });
             </script>
         </body>
