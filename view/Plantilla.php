@@ -41,6 +41,8 @@ if (isset($_GET["ubicacion"])) {
             <link rel="stylesheet" href="view/presentacion/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
             <link rel="stylesheet" href="view/presentacion/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
             <link rel="stylesheet" href="view/presentacion/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+            <!-- Hover -->
+            <link rel="stylesheet" href="view/presentacion/dist/css/hover.css">
         </head>
 
         <body class="hold-transition sidebar-mini layout-fixed">
@@ -102,11 +104,15 @@ if (isset($_GET["ubicacion"])) {
             <script src="view/presentacion/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
             <script src="view/presentacion/plugins/datatables-buttons/js/buttons.print.min.js"></script>
             <script src="view/presentacion/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+            <!-- Filterizr-->
+            <script src="view/presentacion/plugins/filterizr/jquery.filterizr.min.js"></script>
+            <!-- Page specific script agregar archivo-->
             <script>
                 $(function() {
                     bsCustomFileInput.init();
                 });
             </script>
+            <!-- Page specific script historial ventas y compras-->
             <script>
                 $(function() {
                     $("#example1").DataTable({
@@ -125,6 +131,25 @@ if (isset($_GET["ubicacion"])) {
                         "responsive": true,
                     });
                 });
+            </script>
+            <!-- Page specific script categorias-->
+            <script>
+                $(function() {
+                    $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+                        event.preventDefault();
+                        $(this).ekkoLightbox({
+                            alwaysShowClose: true
+                        });
+                    });
+
+                    $('.filter-container').filterizr({
+                        gutterPixels: 3
+                    });
+                    $('.btn[data-filter]').on('click', function() {
+                        $('.btn[data-filter]').removeClass('active');
+                        $(this).addClass('active');
+                    });
+                })
             </script>
         </body>
 <?php

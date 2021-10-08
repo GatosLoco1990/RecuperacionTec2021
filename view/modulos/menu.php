@@ -23,7 +23,7 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-chart-pie"></i>
+              <i class="nav-icon fas fa-th-large"></i>
               <p>
                 Categorias
                 <i class="right fas fa-angle-left"></i>
@@ -46,7 +46,7 @@
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-tree"></i>
+              <i class="nav-icon fas fa-tags  "></i>
               <p>
                 Ventas
                 <i class="fas fa-angle-left right"></i>
@@ -70,7 +70,7 @@
           <!-- Menu cliente -->
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-chart-pie"></i>
+              <i class="nav-icon fas fa-th-large"></i>
               <p>
                 Categorias
                 <i class="right fas fa-angle-left"></i>
@@ -87,7 +87,7 @@
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-chart-pie"></i>
+              <i class="nav-icon fas fa-store"></i>
               <p>
                 Compras
                 <i class="right fas fa-angle-left"></i>
@@ -104,7 +104,7 @@
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-chart-pie"></i>
+              <i class="nav-icon fas fa-hands-helping"></i>
               <p>
                 Ayuda
                 <i class="right fas fa-angle-left"></i>
@@ -127,7 +127,7 @@
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-chart-pie"></i>
+              <i class="nav-icon fas fa-info-circle"></i>
               <p>
                 Acerca
                 <i class="right fas fa-angle-left"></i>

@@ -21,7 +21,7 @@
         <!-- /.login-logo -->
         <div class="card card-outline card-primary">
             <div class="card-header text-center">
-                <a href="../../index2.html" class="h1"><b>Olimpica</b>RGV</a>
+                <a href="#" class="h1"><b>Olimpica</b>RGV</a>
             </div>
             <div class="card-body">
                 <p class="login-box-msg">Ingresa para iniciar sesión</p>
