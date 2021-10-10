@@ -67,14 +67,17 @@
                                 <div class="form-group">
                                     <label>Modo de pago</label>
                                     <select class="custom-select">
-                                        <option>option 1</option>
-                                        <option>option 2</option>
-                                        <option>option 3</option>
-                                        <option>option 4</option>
-                                        <option>option 5</option>
+                                        <?php
+                                        $query = $conexion->query("SELECT * FROM `modopago`");
+                                        while ($valores = mysqli_fetch_array($query)) {
+                                            echo '<option value="'.$valores['id_modopago'].'">' . utf8_encode($valores['metodo']). '</option>';
+
+                                        }
+                                        ?>
+
                                     </select>
                                 </div>
-                                
+
                             </div>
                             <!-- /.card-body -->
 

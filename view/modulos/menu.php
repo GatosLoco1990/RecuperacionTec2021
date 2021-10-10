@@ -142,6 +142,22 @@
               </li>
             </ul>
           </li>
+          <li class="nav-item">
+            <a href="Registrar-cliente" class="nav-link">
+              <i class="nav-icon far fa-calendar-alt"></i>
+              <p>
+                Registrar Cliente
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="Registrar-empleado" class="nav-link">
+              <i class="nav-icon far fa-calendar-alt"></i>
+              <p>
+                Registrar Empleado
+              </p>
+            </a>
+          </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

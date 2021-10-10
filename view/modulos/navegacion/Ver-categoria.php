@@ -23,7 +23,7 @@
                     <div class="col-12">
                         <div class="card card-primary">
                             <div class="card-header">
-                                <h4 class="card-title">Categorias</h4>
+                                <h4 class="card-title">Categor&iacute;as</h4>
                             </div>
                             <div class="card-body">
                                 <div>
@@ -57,6 +57,9 @@
                                                         <img src="view/presentacion/dist/img/ordenador-personal.png" class="img-fluid mb-2" alt="Computadores" />
                                                         <div class="capa">
                                                             <h3>Computadores</h3>
+                                                            <p>
+                                                            <button type="button" href = "dashboard" class="btn btn-block btn-primary">Primary</button>
+                                                            </p>
                                                         </div>
                                                     </figure>
                                                 </a>

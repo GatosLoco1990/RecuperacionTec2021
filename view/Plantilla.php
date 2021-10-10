@@ -7,7 +7,7 @@ if (isset($_GET["ubicacion"])) {
         $_GET["ubicacion"] == "Registrar-categoria" || $_GET["ubicacion"] == "Registrar-venta" ||
         $_GET["ubicacion"] == "Historial-venta" || $_GET["ubicacion"] == "faq" || $_GET["ubicacion"] == "Contactanos" ||
         $_GET["ubicacion"] == "Ver-categoria-cliente" || $_GET["ubicacion"] == "Historial-compra" || $_GET["ubicacion"] == "Quienes" ||
-        $_GET["ubicacion"] == "Perfil"
+        $_GET["ubicacion"] == "Perfil" || $_GET["ubicacion"] == "Registrar-empleado" || $_GET["ubicacion"] == "Registrar-cliente" 
     ) { ?>
         <!DOCTYPE html>
         <html lang="es">
@@ -43,11 +43,15 @@ if (isset($_GET["ubicacion"])) {
             <link rel="stylesheet" href="view/presentacion/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
             <!-- Hover -->
             <link rel="stylesheet" href="view/presentacion/dist/css/hover.css">
+            <!-- Sweet alert2 -->
+            <link rel="stylesheet" href="view/presentacion/dist/css/sweetalert2.min.css">
+
         </head>
 
         <body class="hold-transition sidebar-mini layout-fixed">
             <div class="wrapper">
                 <?php
+                include "model/conexion.php";
                 include "modulos/header.php";
                 include "modulos/menu.php";
                 include "modulos/navegacion/" . $_GET["ubicacion"] . ".php";
@@ -106,6 +110,9 @@ if (isset($_GET["ubicacion"])) {
             <script src="view/presentacion/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
             <!-- Filterizr-->
             <script src="view/presentacion/plugins/filterizr/jquery.filterizr.min.js"></script>
+            <!-- Sweet alert2-->
+            <script src="view/presentacion/dist/js/alertas.js"></script>
+            <script src="view/presentacion/dist/js/sweetalert2.min.js"></script>
             <!-- Page specific script agregar archivo-->
             <script>
                 $(function() {
