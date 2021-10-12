@@ -27,22 +27,21 @@
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form>
+                        <form id="FormRegistrarCategoria" name="FormRegistrarCategoria" method="POST" enctype="multipart/form-data">
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Nombre</label>
-                                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Ingresa el nombre de la categor&iacute;a">
+                                    <input type="text" class="form-control" id="desc_categoria" name="desc_categoria" placeholder="Ingresa el nombre de la categor&iacute;a">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputFile">Imagen</label>
                                     <div class="input-group">
                                         <div class="custom-file">
-                                            <input type="file" class="custom-file-input" id="exampleInputFile">
+                                            <input type="file" class="custom-file-input" id="fotoCategoria" name="fotoCategoria">
                                             <label class="custom-file-label" for="exampleInputFile">Selecciona la imagen</label>
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
                             <!-- /.card-body -->
 

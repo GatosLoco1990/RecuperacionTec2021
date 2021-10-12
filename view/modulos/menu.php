@@ -21,6 +21,7 @@
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+        <li class="nav-header">Empleado</li>
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-th-large"></i>
@@ -33,7 +34,13 @@
               <li class="nav-item">
                 <a href="Registrar-categoria" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Registrar</p>
+                  <p>Registrar categorias</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="Registrar-producto" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Registrar producto</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -67,6 +74,7 @@
               </li>
             </ul>
           </li>
+          <li class="nav-header">Clientes</li>
           <!-- Menu cliente -->
           <li class="nav-item">
             <a href="#" class="nav-link">
@@ -144,7 +152,7 @@
           </li>
           <li class="nav-item">
             <a href="Registrar-cliente" class="nav-link">
-              <i class="nav-icon far fa-calendar-alt"></i>
+              <i class="nav-icon fa fa-user fa-fw"></i>
               <p>
                 Registrar Cliente
               </p>
@@ -152,7 +160,7 @@
           </li>
           <li class="nav-item">
             <a href="Registrar-empleado" class="nav-link">
-              <i class="nav-icon far fa-calendar-alt"></i>
+              <i class="nav-icon fa fa-users fa-fw"></i>
               <p>
                 Registrar Empleado
               </p>

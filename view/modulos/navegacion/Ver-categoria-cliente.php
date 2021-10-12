@@ -52,7 +52,7 @@
                                     <div class="filter-container p-3 row">
                                         <div class="contenedor">
                                             <div class="filtr-item col-sm-2" data-category="1" data-sort="Computadores">
-                                                <a href="view/presentacion/navegacion/" data-toggle="lightbox" data-title="2">
+                                                <a href="Registrar-producto" data-toggle="lightbox" data-title="2">
                                                     <figure>
                                                         <img src="view/presentacion/dist/img/ordenador-personal.png" class="img-fluid mb-2" alt="Computadores" />
                                                         <div class="capa">

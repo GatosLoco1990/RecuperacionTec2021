@@ -26,54 +26,63 @@
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form>
+                        <form id="FormRegistrarEmpleado" name="FormRegistrarEmpleado" method="POST">
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="apellido">Apellidos</label>
-                                    <input type="text" class="form-control" id="apellido" placeholder="Apellidos">
+                                    <input type="text" class="form-control" id="apellidoEmpleado" name="apellidoEmpleado" placeholder="Apellidos">
                                 </div>
                                 <div class="form-group">
                                     <label for="nombre">Nombre</label>
-                                    <input type="text" class="form-control" id="nombre" placeholder="Nombres">
+                                    <input type="text" class="form-control" id="nombreEmpleado" name="nombreEmpleado" placeholder="Nombres">
                                 </div>
                                 <div class="form-group">
                                     <label for="doc">Documento</label>
-                                    <input type="number" class="form-control" id="doc" placeholder="Documento">
+                                    <input type="number" class="form-control" id="documentoEmpleado" name="documentoEmpleado" placeholder="Documento">
                                 </div>
                                 <div class="form-group">
                                     <label for="fecha de nacimiento">Fecha de nacimiento</label>
-                                    <input type="date" class="form-control" id="fecha de nacimiento" placeholder="Fecha de nacimiento">
+                                    <input type="date" class="form-control" id="fenacEmpleado" name="fenacEmpleado" placeholder="Fecha de nacimiento">
                                 </div>
                                 <div class="form-group">
                                     <label for="tel">Telefono</label>
-                                    <input type="number" class="form-control" id="tel" placeholder="Telefono">
+                                    <input type="number" class="form-control" id="telEmpleado" name="telEmpleado" placeholder="Telefono">
                                 </div>
                                 <div class="form-group">
                                     <label for="dir    de nacimiento">Direcci&oacute;n</label>
-                                    <input type="text" class="form-control" id="dir" placeholder="Direcci&oacute;n">
+                                    <input type="text" class="form-control" id="dirEmpleado" name="dirEmpleado" placeholder="Direcci&oacute;n">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Correo</label>
-                                    <input type="mail" class="form-control" id="exampleInputEmail1" placeholder="Correo">
+                                    <input type="mail" class="form-control" id="correoEmpleado" name="correoEmpleado" placeholder="Correo">
                                 </div>
                                 <div class="form-group">
                                     <label for="fecha de nacimiento">Fecha de ingreso</label>
-                                    <input type="date" class="form-control" id="fecha de nacimiento" placeholder="Fecha de ingreso">
+                                    <input type="date" class="form-control" id="fechaingEmpleado" name="fechaingEmpleado" placeholder="Fecha de ingreso">
                                 </div>
                                 <div class="form-group">
                                     <label>Sucursal</label>
-                                    <select class="custom-select">
+                                    <select class="custom-select" id="sucursalEmpleado" name="sucursalEmpleado">
                                         <?php
                                         $query = $conexion->query("SELECT sucursal.id_sucursal, sucursal.desc_sucursal, ciudad.desc_ciudad FROM sucursal INNER JOIN ciudad ON sucursal.id_ciudad = ciudad.id_ciudad");
                                         while ($valores = mysqli_fetch_array($query)) {
-                                            echo '<option value="' . $valores['id_sucursal'] . '">'. utf8_encode($valores['desc_ciudad'])." - " . utf8_encode($valores['desc_sucursal']) . '</option>';
+                                            echo '<option value="' . $valores['id_sucursal'] . '">' . utf8_encode($valores['desc_ciudad']) . " - " . utf8_encode($valores['desc_sucursal']) . '</option>';
                                         }
                                         ?>
                                     </select>
                                 </div>
-
-
+                                <div class="form-group">
+                                    <label>Rol</label>
+                                    <select class="custom-select" id="rolEmpleado" name="rolEmpleado">
+                                        <?php
+                                        $query = $conexion->query("SELECT * FROM rol");
+                                        while ($valores = mysqli_fetch_array($query)) {
+                                            echo '<option value="' . $valores['id'] . '">' . utf8_encode($valores['descripcion']) . '</option>';
+                                        }
+                                        ?>
+                                    </select>
+                                </div>
                             </div>
                             <!-- /.card-body -->
 

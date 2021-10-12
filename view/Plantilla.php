@@ -7,7 +7,8 @@ if (isset($_GET["ubicacion"])) {
         $_GET["ubicacion"] == "Registrar-categoria" || $_GET["ubicacion"] == "Registrar-venta" ||
         $_GET["ubicacion"] == "Historial-venta" || $_GET["ubicacion"] == "faq" || $_GET["ubicacion"] == "Contactanos" ||
         $_GET["ubicacion"] == "Ver-categoria-cliente" || $_GET["ubicacion"] == "Historial-compra" || $_GET["ubicacion"] == "Quienes" ||
-        $_GET["ubicacion"] == "Perfil" || $_GET["ubicacion"] == "Registrar-empleado" || $_GET["ubicacion"] == "Registrar-cliente" 
+        $_GET["ubicacion"] == "Perfil" || $_GET["ubicacion"] == "Registrar-empleado" || $_GET["ubicacion"] == "Registrar-cliente" ||
+        $_GET["ubicacion"] == "producto" || $_GET["ubicacion"] == "Registrar-producto"
     ) { ?>
         <!DOCTYPE html>
         <html lang="es">
@@ -113,6 +114,13 @@ if (isset($_GET["ubicacion"])) {
             <!-- Sweet alert2-->
             <script src="view/presentacion/dist/js/alertas.js"></script>
             <script src="view/presentacion/dist/js/sweetalert2.min.js"></script>
+            <!-- Jquery Validation -->
+            <script src="view/presentacion/plugins/jquery-validation/jquery.validate.min.js"></script>
+            <script src="view/presentacion/plugins/jquery-validation/additional-methods.min.js"></script>
+            <!-- Login JS-->
+            <script src="view/presentacion/dist/js/login.js"></script>
+            <!-- Registrar JS-->
+            <script src="view/presentacion/dist/js/registrar.js"></script>
             <!-- Page specific script agregar archivo-->
             <script>
                 $(function() {

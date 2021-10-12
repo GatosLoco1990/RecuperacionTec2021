@@ -50,80 +50,27 @@
                                 </div>
                                 <div>
                                     <div class="filter-container p-3 row">
-                                        <div class="contenedor">
-                                            <div class="filtr-item col-sm-2" data-category="1" data-sort="Computadores">
-                                                <a href="#" data-toggle="lightbox" data-title="2">
-                                                    <figure>
-                                                        <img src="view/presentacion/dist/img/ordenador-personal.png" class="img-fluid mb-2" alt="Computadores" />
-                                                        <div class="capa">
-                                                            <h3>Computadores</h3>
-                                                            <p>
-                                                            <button type="button" href = "dashboard" class="btn btn-block btn-primary">Primary</button>
-                                                            </p>
-                                                        </div>
-                                                    </figure>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="contenedor">
-                                            <div class="filtr-item col-sm-2" data-category="2, 4" data-sort="Altavoz de audio">
-                                                <a href="#" data-toggle="lightbox" data-title="1">
-                                                    <figure>
-                                                        <img src="view/presentacion/dist/img/altavoz-de-audio.png" class="img-fluid mb-2" alt="Altavoz de audio" />
-                                                        <div class="capa">
-                                                            <h3>Audio</h3>
-                                                        </div>
-                                                    </figure>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="contenedor">
-                                            <div class="filtr-item col-sm-2" data-category="2, 4" data-sort="Videojuegos">
-
-                                                <a href="#" data-toggle="lightbox" data-title="1">
-                                                    <figure>
-                                                        <img src="view/presentacion/dist/img/videojuegos.png" class="img-fluid mb-2" alt="Videojuegos" />
-                                                        <div class="capa">
-                                                            <h3>Videojuegos</h3>
-                                                        </div>
-                                                    </figure>
-                                                </a>
-
-                                            </div>
-                                        </div>
-                                        <div class="contenedor">
-                                            <div class="filtr-item col-sm-2" data-category="2, 4" data-sort="Celular">
-
-                                                <a href="#" data-toggle="lightbox" data-title="1">
-                                                    <figure>
-                                                        <img src="view/presentacion/dist/img/celular.png" class="img-fluid mb-2" alt="Celular" />
-                                                        <div class="capa">
-                                                            <h3>Celulares</h3>
-
-
-                                                        </div>
-                                                    </figure>
-                                                </a>
-
-
-                                            </div>
-                                        </div>
-                                        <div class="contenedor">
-                                            <div class="filtr-item col-sm-2" data-category="2, 4" data-sort="Electrodomesticos">
-
-                                                <a href="#" data-toggle="lightbox" data-title="1">
-                                                    <figure>
-                                                        <img src="view/presentacion/dist/img/electrodomesticos.png" class="img-fluid mb-2" alt="Electrodomesticos" />
-                                                        <div class="capa">
-                                                            <h3>Electrodometicos</h3>
-
-                                                        </div>
-                                                    </figure>
-                                                </a>
-
-
-                                            </div>
-                                        </div>
+                                        <?php
+                                        $query = $conexion->query("SELECT * FROM `categoria` ORDER BY `desc_categoria` ASC");
+                                        while ($row = mysqli_fetch_array($query)) {
+                                            echo "
+                                            <div class='contenedor'>
+                                                <div class='filtr-item col-sm-2' data-category='1' data-sort='Computadores'>
+                                                    <a href='Registrar-producto' data-toggle='lightbox' data-title='2'>
+                                                        <figure>
+                                                            <img src='model/".$row['ruta_imagen'] ."' class='img-fluid mb-2' alt='Computadores' />
+                                                            <div class='capa'>
+                                                                <h3>".$row['desc_categoria'] ."</h3>
+                                                                <p>
+                                                                    <a href='Registrar-producto'><button type='button' class='btn btn-block btn-primary'>Ir</button></a>
+                                                                </p>
+                                                            </div>
+                                                        </figure>
+                                                    </a>
+                                                </div>
+                                            </div>";
+                                        }
+                                        ?>
                                     </div>
                                 </div>
                             </div>
