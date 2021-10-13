@@ -64,7 +64,7 @@ $(document).ready(function () {
         correoEmpleado: $("#correoEmpleado").val(),
         fechaingEmpleado: $("#fechaingEmpleado").val(),
         sucursalEmpleado: $("#sucursalEmpleado").val(),
-        rolEmpleado: $("#rolEmpleado").val()
+        rolEmpleado: $("#rolEmpleado").val(),
       };
       $.ajax({
         url: "model/registrarEmpleado.php",
@@ -268,6 +268,57 @@ $(document).ready(function () {
         },
       });
     },
+  });
+
+  /*
+METODO PARA REGISTRAR IMAGEN PRODUCTO
+*/
+  $("#FormRegistrarProducto").on("submit", function (e) {
+    e.preventDefault();
+    var datos = new FormData(this);
+    if (document.getElementById("fotoProducto").files.length == 0) {
+      Swal.fire({
+        icon: "error",
+        title: "¡Ups!",
+        text: "No se ha cargado ningún archivo",
+      });
+    } else {
+      $.ajax({
+        url: "model/registrarProducto.php",
+        data: datos,
+        type: "POST",
+        dataType: "json",
+        contentType: false,
+        processData: false,
+        async: true,
+        cache: false,
+        success: function (data) {
+          if (data.respuesta == "exito") {
+            ingresoExitoso(
+              "¡Exito!",
+              "Se ha subido registrado correctamente la categoria."
+            );
+            setTimeout(function () {
+              window.location.href = "Ver-categoria";
+            }, 1000);
+          } else if (data.respuesta == "error") {
+            respuestaError(
+              "Error!",
+              "Ocurrio un error al registrar la categoria."
+            );
+          } else if (data.respuesta == "noformato") {
+            respuestaError(
+              "Error!",
+              "Debe de elegir una foto con extensión .jpg, .jpeg, .png."
+            );
+          } else if (data.respuesta == "notamano") {
+            respuestaError("Error!", "Debe de elegir un tamaño menor a 4MB.");
+          } else if (data.respuesta == "vacio") {
+            respuestaError("Error!", "Debe de completar los campos.");
+          }
+        },
+      });
+    }
   });
 });
 /*

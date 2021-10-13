@@ -56,13 +56,13 @@
                                             echo "
                                             <div class='contenedor'>
                                                 <div class='filtr-item col-sm-2' data-category='1' data-sort='Computadores'>
-                                                    <a href='Registrar-producto' data-toggle='lightbox' data-title='2'>
+                                                    <a href='Categoria' data-toggle='lightbox' data-title='2'>
                                                         <figure>
                                                             <img src='model/".$row['ruta_imagen'] ."' class='img-fluid mb-2' alt='Computadores' />
                                                             <div class='capa'>
                                                                 <h3>".$row['desc_categoria'] ."</h3>
                                                                 <p>
-                                                                    <a href='Registrar-producto'><button type='button' class='btn btn-block btn-primary'>Ir</button></a>
+                                                                    <a href='Categoria'><button type='button' class='btn btn-block btn-primary'>Ir</button></a>
                                                                 </p>
                                                             </div>
                                                         </figure>

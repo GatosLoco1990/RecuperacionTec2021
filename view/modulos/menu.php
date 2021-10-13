@@ -21,151 +21,210 @@
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-        <li class="nav-header">Empleado</li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-th-large"></i>
-              <p>
-                Categorias
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="Registrar-categoria" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Registrar categorias</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="Registrar-producto" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Registrar producto</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="Ver-categoria" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Ver</p>
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-tags  "></i>
-              <p>
-                Ventas
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="Registrar-venta" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Registrar</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="Historial-venta" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Ver historial</p>
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-header">Clientes</li>
-          <!-- Menu cliente -->
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-th-large"></i>
-              <p>
-                Categorias
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="Ver-categoria-cliente" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Ver</p>
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-store"></i>
-              <p>
-                Compras
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="Historial-compra" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Historial</p>
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-hands-helping"></i>
-              <p>
-                Ayuda
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="Contactanos" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Contacto</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="faq" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Preguntas frecuentes</p>
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-info-circle"></i>
-              <p>
-                Acerca
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="Quienes" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>¿Qui&eacute;nes somos?</p>
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a href="Registrar-cliente" class="nav-link">
-              <i class="nav-icon fa fa-user fa-fw"></i>
-              <p>
-                Registrar Cliente
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="Registrar-empleado" class="nav-link">
-              <i class="nav-icon fa fa-users fa-fw"></i>
-              <p>
-                Registrar Empleado
-              </p>
-            </a>
-          </li>
+          <!-- Menu empleado -->
+          <?php
+
+          if ($_SESSION['rol'] == '2') { ?>
+
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-th-large"></i>
+                <p>
+                  Categorias
+                  <i class="right fas fa-angle-left"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="Registrar-producto" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Registrar producto</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="Ver-categoria" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Ver</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-tags  "></i>
+                <p>
+                  Ventas
+                  <i class="fas fa-angle-left right"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="Registrar-venta" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Registrar</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="Historial-venta" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Ver historial</p>
+                  </a>
+                </li>
+              </ul>
+            <li class="nav-item">
+              <a href="Registrar-cliente" class="nav-link">
+                <i class="nav-icon fa fa-user fa-fw"></i>
+                <p>
+                  Registrar Cliente
+                </p>
+              </a>
+            </li>
+            </li>
+            <!-- Menu cliente -->
+          <?php } else if ($_SESSION['rol'] == '2') { ?>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-th-large"></i>
+                <p>
+                  Categorias
+                  <i class="right fas fa-angle-left"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="Ver-categoria-cliente" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Ver</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-store"></i>
+                <p>
+                  Compras
+                  <i class="right fas fa-angle-left"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="Historial-compra" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Historial</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-hands-helping"></i>
+                <p>
+                  Ayuda
+                  <i class="right fas fa-angle-left"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="Contactanos" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Contacto</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="faq" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Preguntas frecuentes</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-info-circle"></i>
+                <p>
+                  Acerca
+                  <i class="right fas fa-angle-left"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="Quienes" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>¿Qui&eacute;nes somos?</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- Menu admin -->
+          <?php } else if ($_SESSION['rol'] == '1') { ?>
+            <li class="nav-header">Administrador</li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-th-large"></i>
+                <p>
+                  Categorias
+                  <i class="right fas fa-angle-left"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="Registrar-categoria" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Registrar categorias</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="Registrar-producto" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Registrar producto</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="Ver-categoria-administrador" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Ver</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fa fa-users fa-fw"></i>
+                <p>
+                  Empleado
+                  <i class="right fas fa-angle-left"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="Registrar-empleado" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>
+                      Registrar Empleado
+                    </p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="certificado" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Generar certificado</p>
+                  </a>
+                </li>
+
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a href="Registrar-cliente" class="nav-link">
+                <i class="nav-icon fa fa-user fa-fw"></i>
+                <p>
+                  Registrar Cliente
+                </p>
+              </a>
+            </li>
+          <?php } ?>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

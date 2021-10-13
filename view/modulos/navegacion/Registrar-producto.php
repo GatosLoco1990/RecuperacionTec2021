@@ -67,6 +67,15 @@
                                     <label for="fecha de nacimiento">Fecha de ingreso</label>
                                     <input type="date" class="form-control" id="fechaProducto" name="fechaProducto">
                                 </div>
+                                <div class="form-group">
+                                    <label for="exampleInputFile">Imagen</label>
+                                    <div class="input-group">
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" id="fotoProducto" name="fotoProducto">
+                                            <label class="custom-file-label" for="exampleInputFile">Selecciona la imagen</label>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <!-- /.card-body -->
 

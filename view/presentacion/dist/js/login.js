@@ -1,13 +1,13 @@
 $(document).ready(function () {
   $("#FormLogin").validate({
     rules: {
-      ingresarCorreo: { required: true, number: true },
+      ingresarCorreo: { required: true, email: true },
       ingresarContrasena: { required: true },
     },
     messages: {
       ingresarCorreo: {
         required: "Debe de completar los campos.",
-        number: "Solo se aceptan números.",
+        email: "Solo se aceptan correos.",
       },
       ingresarContrasena: { required: "Debe de completar los campos." },
     },
@@ -38,11 +38,9 @@ $(document).ready(function () {
           respuestaInfoEspera("Registrando... ¡Espere por favor!");
         },
         success: function (data) {
+          console.log(data)
           if (data.respuesta == "exito") {
-            ingresoExitoso(
-              "¡Inicio Sesión!",
-              "Bienvenido(a) a Emisora Morena Stereo"
-            );
+            ingresoExitoso("¡Inicio Sesión!", "Bienvenido(a) a Olimpica RGV");
             setTimeout(function () {
               location.reload();
             }, 1000);
@@ -50,11 +48,6 @@ $(document).ready(function () {
             respuestaError(
               "¡Error!",
               "Usuario, contraseña y/ o rol incorrectos"
-            );
-          } else if (data.respuesta == "estado") {
-            respuestaError(
-              "¡Error!",
-              "No tiene permiso para ingresar a la plataforma"
             );
           }
         },

@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(isset($_SESSION['rol'])){ //isset = Tener datos adentro
+    header('Location: dashboard');
+}
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -14,6 +21,8 @@
     <link rel="stylesheet" href="view/presentacion/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="view/presentacion/dist/css/adminlte.min.css">
+    <!-- Sweet alert2 -->
+    <link rel="stylesheet" href="view/presentacion/dist/css/sweetalert2.min.css">
 </head>
 
 <body class="hold-transition login-page">
@@ -26,9 +35,9 @@
             <div class="card-body">
                 <p class="login-box-msg">Ingresa para iniciar sesión</p>
 
-                <form action="../../index3.html" method="post">
+                <form id="FormLogin" name="FormLogin" method="POST">
                     <div class="input-group mb-3">
-                        <input type="email" class="form-control" placeholder="Correo">
+                        <input type="email" class="form-control" id="ingresarCorreo" name="ingresarCorreo" placeholder="Correo">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-envelope"></span>
@@ -36,7 +45,7 @@
                         </div>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="password" class="form-control" placeholder="Contrase&ntilde;a">
+                        <input type="password" class="form-control" id="ingresarContrasena" name="ingresarContrasena" placeholder="Contrase&ntilde;a">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-lock"></span>
@@ -44,18 +53,22 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <select class="form-control">
-                            <option value="cliente">Cliente</option>
-                            <option value="empleado">Empleado</option>
+                        <select class="form-control" id="ingresarTipo" name="ingresarTipo">
+                            <?php
+                            $query = $conexion->query("SELECT * FROM `rol` ORDER BY `rol`.`descripcion` ASC");
+                            while ($valores = mysqli_fetch_array($query)) {
+                                echo '<option value="' . $valores['id'] . '">' . utf8_encode($valores['descripcion']) . '</option>';
+                            }
+                            ?>
                         </select>
                     </div>
                     <div class="row">
                         <!-- /.col -->
-                        <div class="col-4"> </div>
-                        <div class="col-4">
-                            <button type="button" class="btn btn-primary btn-block" ><a href="dashboard">Iniciar</a></button>
+                        <div class="col-3"> </div>
+                        <div class="col-6">
+                            <button type="submit" class="btn btn-primary btn-block">Iniciar Sesi&oacute;n </button>
                         </div>
-                        <div class="col-4"> </div>
+                        <div class="col-3"> </div>
                         <!-- /.col -->
                     </div>
                 </form>
@@ -82,6 +95,15 @@
     <script src="view/presentacion/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- AdminLTE App -->
     <script src="view/presentacion/dist/js/adminlte.min.js"></script>
+    <!-- Sweet alert2-->
+    <script src="view/presentacion/dist/js/alertas.js"></script>
+    <script src="view/presentacion/dist/js/sweetalert2.min.js"></script>
+    <!-- Jquery Validation -->
+    <script src="view/presentacion/plugins/jquery-validation/jquery.validate.min.js"></script>
+    <script src="view/presentacion/plugins/jquery-validation/additional-methods.min.js"></script>
+    <!-- Login JS-->
+    <script src="view/presentacion/dist/js/login.js"></script>
+
 </body>
 
 </html>

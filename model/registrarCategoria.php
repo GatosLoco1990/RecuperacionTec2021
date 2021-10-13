@@ -4,7 +4,7 @@
 require_once 'conexion.php';
 
 $descripcion = $_POST['desc_categoria'];
-$directorio = "archivos/imagenes/";
+$directorio = "archivos/imagenes/categorias/";
 
 if (empty($descripcion)) {
     $respuesta = array('respuesta' => 'Vacio');

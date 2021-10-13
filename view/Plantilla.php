@@ -1,6 +1,7 @@
 <?php
 if (isset($_GET["ubicacion"])) {
     if ($_GET["ubicacion"] == "Inicio") {
+        include "model/conexion.php";
         include "modulos/navegacion/" . $_GET["ubicacion"] . ".php";
     } else if (
         $_GET["ubicacion"] == "dashboard" || $_GET["ubicacion"] == "Ver-categoria" ||
@@ -8,7 +9,9 @@ if (isset($_GET["ubicacion"])) {
         $_GET["ubicacion"] == "Historial-venta" || $_GET["ubicacion"] == "faq" || $_GET["ubicacion"] == "Contactanos" ||
         $_GET["ubicacion"] == "Ver-categoria-cliente" || $_GET["ubicacion"] == "Historial-compra" || $_GET["ubicacion"] == "Quienes" ||
         $_GET["ubicacion"] == "Perfil" || $_GET["ubicacion"] == "Registrar-empleado" || $_GET["ubicacion"] == "Registrar-cliente" ||
-        $_GET["ubicacion"] == "producto" || $_GET["ubicacion"] == "Registrar-producto"
+        $_GET["ubicacion"] == "producto" || $_GET["ubicacion"] == "Registrar-producto" || $_GET["ubicacion"] == "Categoria" || $_GET["ubicacion"] == "Ver-categoria-administrador"
+        || $_GET["ubicacion"] == "certificado" || $_GET["ubicacion"] == "descripcion-pago" || $_GET["ubicacion"] == "descripcion-pago-imprimir"
+        || $_GET["ubicacion"] == "Salir"
     ) { ?>
         <!DOCTYPE html>
         <html lang="es">
@@ -16,7 +19,7 @@ if (isset($_GET["ubicacion"])) {
         <head>
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1">
-            <title>OlimpicaRGV | Dashboard</title>
+            <title>OlimpicaRGV</title>
 
             <!-- Google Font: Source Sans Pro -->
             <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -52,11 +55,21 @@ if (isset($_GET["ubicacion"])) {
         <body class="hold-transition sidebar-mini layout-fixed">
             <div class="wrapper">
                 <?php
-                include "model/conexion.php";
-                include "modulos/header.php";
-                include "modulos/menu.php";
-                include "modulos/navegacion/" . $_GET["ubicacion"] . ".php";
-                include "modulos/footer.php";
+
+                if ($_GET["ubicacion"] == "descripcion-pago-imprimir") {
+                    include "modulos/navegacion/descripcion-pago-imprimir.php";
+                } else {
+
+                    include "model/conexion.php";
+                    session_start();
+                    include "modulos/header.php";
+                    include "modulos/menu.php";
+                    if (empty($_SESSION['rol'])) {
+                        header("Location: Inicio");
+                    }
+                    include "modulos/navegacion/" . $_GET["ubicacion"] . ".php";
+                    include "modulos/footer.php";
+                }
                 ?>
             </div>
 
@@ -117,8 +130,7 @@ if (isset($_GET["ubicacion"])) {
             <!-- Jquery Validation -->
             <script src="view/presentacion/plugins/jquery-validation/jquery.validate.min.js"></script>
             <script src="view/presentacion/plugins/jquery-validation/additional-methods.min.js"></script>
-            <!-- Login JS-->
-            <script src="view/presentacion/dist/js/login.js"></script>
+
             <!-- Registrar JS-->
             <script src="view/presentacion/dist/js/registrar.js"></script>
             <!-- Page specific script agregar archivo-->
@@ -167,6 +179,7 @@ if (isset($_GET["ubicacion"])) {
                 })
             </script>
         </body>
+
 <?php
 
     } else if ($_GET["ubicacion"] == "Inicio") {
