@@ -14,7 +14,10 @@
           <img src="view/presentacion/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="Perfil" class="d-block">Alexander Pierce</a>
+          
+          <?php
+          echo "<a href='Perfil' class='d-block'>". $_SESSION['nombre'] ."</a>";
+          ?>
         </div>
       </div>
 
@@ -81,7 +84,7 @@
             </li>
             </li>
             <!-- Menu cliente -->
-          <?php } else if ($_SESSION['rol'] == '2') { ?>
+          <?php } else if ($_SESSION['rol'] == '3') { ?>
             <li class="nav-item">
               <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-th-large"></i>

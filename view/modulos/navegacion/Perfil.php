@@ -44,7 +44,9 @@
                                                 <div class="col-sm-12">
                                                     <div class="form-group">
                                                         <label>Correo</label>
-                                                        <input type="text" class="form-control" placeholder="Correo" disabled>
+                                                        <?php
+                                                        echo "<input type='text' class='form-control' placeholder='".$_SESSION['correo'] ."' disabled>"
+                                                        ?>
                                                     </div>
                                                 </div>
 
@@ -74,34 +76,53 @@
                                                 <div class="col-sm-12">
                                                     <div class="form-group">
                                                         <label>Nombres y apellidos</label>
-                                                        <input type="text" class="form-control" placeholder="Nombres y apellidos" disabled>
+                                                        <?php
+                                                        echo "<input type='text' class='form-control' placeholder='".$_SESSION['nombre'] . " ".$_SESSION['apellido'] ."' disabled>"
+                                                        ?>
                                                     </div>
                                                 </div>
 
                                                 <div class="col-sm-12">
                                                     <div class="form-group">
                                                         <label>Tel&eacute;fono</label>
-                                                        <input type="text" class="form-control" placeholder="Tel&eacute;fono" disabled>
+                                                        <?php
+                                                        echo "<input type='text' class='form-control' placeholder='".$_SESSION['telefono'] ."' disabled>"
+                                                        ?>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-12">
                                                     <div class="form-group">
                                                         <label>Direcci&oacute;n</label>
-                                                        <input type="text" class="form-control" placeholder="Direcci&oacute;n" disabled>
+                                                        <?php
+                                                        echo "<input type='text' class='form-control' placeholder='".$_SESSION['direccion'] ."' disabled>"
+                                                        ?>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-12">
                                                     <div class="form-group">
                                                         <label>Ciudad</label>
-                                                        <input type="text" class="form-control" placeholder="Ciudad" disabled>
+                                                        <?php
+                                                        echo "<input type='text' class='form-control' placeholder='".$_SESSION['ciudad'] ."' disabled>"
+                                                        ?>
                                                     </div>
                                                 </div>
-                                                <div class="col-sm-12">
-                                                    <div class="form-group">
-                                                        <label>Sucursal</label>
-                                                        <input type="text" class="form-control" placeholder="Sucursal" disabled>
+
+                                                <?php
+
+                                                if ($_SESSION['rol'] == 1 || $_SESSION['rol'] == 2){
+                                                    echo "<div class='col-sm-12'>
+                                                    <div class='form-group'>
+                                                        <label>Sucursal</label>.
+                                                        
+                                                        <input type='text' class='form-control' placeholder='".$_SESSION['sucursal'] ."' disabled>
+                                                        
                                                     </div>
-                                                </div>
+                                                </div>";
+                                                    
+                                                }
+
+                                                ?>
+                                                
 
                                             </div>
 
