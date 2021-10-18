@@ -36,31 +36,38 @@
                         </div>
                     </div>
                     <div class="col-7">
-                        <div class="form-group">
-                            <label for="inputName">Nombre</label>
-                            <input type="text" id="inputName" class="form-control" />
-                        </div>
-                        <div class="form-group">
-                            <label for="inputEmail">Correo</label>
-                            <input type="email" id="inputEmail" class="form-control" />
-                        </div>
-                        <div class="form-group">
-                            <label for="inputSubject">Asunto</label>
-                            <input type="text" id="inputSubject" class="form-control" />
-                        </div>
-                        <div class="form-group">
-                            <label for="inputMessage">Mensaje</label>
-                            <textarea id="inputMessage" class="form-control" rows="4"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <input type="submit" class="btn btn-primary" value="Enviar">
+                        <div class="cnt_form">
+                            <form id="FormContacto" name="FormContacto" class="contact" method="POST" action="model/enviar.php">
+                                <div class="form-group">
+                                    <label for="inputName">Nombre</label>
+                                    <input type="text" id="nombre" name="nombre" class="form-control" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputEmail">Correo</label>
+                                    <input type="email" id="correo" name="correo" class="form-control" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputSubject">Asunto</label>
+                                    <input type="text" id="asunto" name="asunto" class="form-control" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputMessage">Mensaje</label>
+                                    <textarea id="mensaje" name="mensaje" class="form-control" rows="4"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <input type="submit" class="btn btn-primary" value="Enviar">
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
-
         </section>
-        <!-- /.content -->
     </div>
-    <!-- /.content-wrapper -->
+</div>
+
+</section>
+<!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
 </div>

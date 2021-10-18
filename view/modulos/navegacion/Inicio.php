@@ -38,6 +38,7 @@ if(isset($_SESSION['rol'])){ //isset = Tener datos adentro
                 <form id="FormLogin" name="FormLogin" method="POST">
                     <div class="input-group mb-3">
                         <input type="email" class="form-control" id="ingresarCorreo" name="ingresarCorreo" placeholder="Correo">
+                        
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-envelope"></span>
@@ -81,6 +82,7 @@ if(isset($_SESSION['rol'])){ //isset = Tener datos adentro
                 </p>
                 <p class="mb-0">
                     <a href="register.html" class="text-center">Registrarse como nuevo miembro</a>
+                    
                 </p>
             </div>
             <!-- /.card-body -->

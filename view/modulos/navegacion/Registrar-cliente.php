@@ -78,6 +78,21 @@
                                     <label for="fecha de nacimiento">Fecha de ingreso</label>
                                     <input type="date" class="form-control" id="fechaingCliente" name="fechaingCliente" placeholder="Fecha de ingreso">
                                 </div>
+                                <div class="form-group">
+                                    <label for="dir    de nacimiento">Direcci&oacute;n</label>
+                                    <input type="text" class="form-control" id="dirCliente" name="dirCliente" placeholder="Direcci&oacute;n">
+                                </div>
+                                <div class="form-group">
+                                    <label>Ciudad</label>
+                                    <select class="custom-select" id="ciudadCliente" name="ciudadCliente">
+                                        <?php
+                                        $query = $conexion->query("SELECT * FROM ciudad ORDER BY `desc_ciudad` ASC");
+                                        while ($valores = mysqli_fetch_array($query)) {
+                                            echo '<option value="' . $valores['id_ciudad'] . '">' . utf8_encode($valores['desc_ciudad']) . '</option>';
+                                        }
+                                        ?>
+                                    </select>
+                                </div>
                             </div>
                             <!-- /.card-body -->
 

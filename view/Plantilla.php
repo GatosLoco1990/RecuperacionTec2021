@@ -11,7 +11,8 @@ if (isset($_GET["ubicacion"])) {
         $_GET["ubicacion"] == "Perfil" || $_GET["ubicacion"] == "Registrar-empleado" || $_GET["ubicacion"] == "Registrar-cliente" ||
         $_GET["ubicacion"] == "producto" || $_GET["ubicacion"] == "Registrar-producto" || $_GET["ubicacion"] == "Categoria" || $_GET["ubicacion"] == "Ver-categoria-administrador"
         || $_GET["ubicacion"] == "certificado" || $_GET["ubicacion"] == "descripcion-pago" || $_GET["ubicacion"] == "descripcion-pago-imprimir"
-        || $_GET["ubicacion"] == "Salir"
+        || $_GET["ubicacion"] == "Salir" || $_GET["ubicacion"] == "reporteSucursal"|| $_GET["ubicacion"] == "Ver-empleados"|| $_GET["ubicacion"] == "Ver-clientes"
+        || $_GET["ubicacion"] == "Ver-productos"
     ) { ?>
         <!DOCTYPE html>
         <html lang="es">

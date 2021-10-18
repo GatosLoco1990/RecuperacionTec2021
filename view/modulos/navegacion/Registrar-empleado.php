@@ -78,10 +78,22 @@
                                         <?php
                                         $query = $conexion->query("SELECT * FROM rol");
                                         while ($valores = mysqli_fetch_array($query)) {
-                                            echo '<option value="' . $valores['id'] . '">' . utf8_encode($valores['descripcion']) . '</option>';
+
+                                            if ($valores['id'] != 3) {
+                                                echo '<option value="' . $valores['id'] . '">' . utf8_encode($valores['descripcion']) . '</option>';
+                                            }
                                         }
                                         ?>
                                     </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputFile">Imagen</label>
+                                    <div class="input-group">
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" id="fotoEmpleado" name="fotoEmpleado">
+                                            <label class="custom-file-label" for="exampleInputFile">Selecciona la imagen</label>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <!-- /.card-body -->

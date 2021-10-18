@@ -14,9 +14,9 @@
           <img src="view/presentacion/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          
+
           <?php
-          echo "<a href='Perfil' class='d-block'>". $_SESSION['nombre'] ."</a>";
+          echo "<a href='Perfil' class='d-block'>" . $_SESSION['nombre'] . "</a>";
           ?>
         </div>
       </div>
@@ -56,7 +56,7 @@
               <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-tags  "></i>
                 <p>
-                  VentasSS
+                  Ventas
                   <i class="fas fa-angle-left right"></i>
                 </p>
               </a>
@@ -187,7 +187,13 @@
                 <li class="nav-item">
                   <a href="Ver-categoria-administrador" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>Ver</p>
+                    <p>Ver Categorias</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="Ver-productos" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Ver Productos</p>
                   </a>
                 </li>
               </ul>
@@ -195,7 +201,7 @@
 
             <li class="nav-item">
               <a href="#" class="nav-link">
-                <i class="nav-icon fa fa-users fa-fw"></i>
+                <i class="nav-icon fa fa-id-card fa-fw"></i>
                 <p>
                   Empleado
                   <i class="right fas fa-angle-left"></i>
@@ -216,17 +222,61 @@
                     <p>Generar certificado</p>
                   </a>
                 </li>
+                <li class="nav-item">
+                  <a href="Ver-empleados" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Ver empleados</p>
+                  </a>
+                </li>
 
               </ul>
             </li>
             <li class="nav-item">
-              <a href="Registrar-cliente" class="nav-link">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fa fa-users fa-fw"></i>
+                <p>
+                  Cliente
+                  <i class="right fas fa-angle-left"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="Registrar-cliente" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>
+                      Registrar Cliente
+                    </p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="Ver-clientes" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>
+                      Ver clientes
+                    </p>
+                  </a>
+                </li>
+
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a href="reporteSucursal" class="nav-link">
                 <i class="nav-icon fa fa-user fa-fw"></i>
                 <p>
-                  Registrar Cliente
+                  Reporte Sucursal
                 </p>
               </a>
             </li>
+            <li class="nav-item">
+              <a href="model/respaldo/respaldo.php" class="nav-link">
+                <i class="nav-icon fa fa-user fa-fw"></i>
+                <p>
+                  Respaldo base de datos
+                </p>
+              </a>
+            </li>
+
           <?php } ?>
         </ul>
       </nav>

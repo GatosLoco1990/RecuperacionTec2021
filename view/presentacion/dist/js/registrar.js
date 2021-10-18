@@ -88,6 +88,58 @@ $(document).ready(function () {
       });
     },
   });
+
+  /*
+  METODO PARA REGISTRAR IMAGEN EMPLEADO
+  */
+
+  $("#FormRegistrarEmpleado").on("submit", function (e) {
+    e.preventDefault();
+    var datos = new FormData(this);
+    if (document.getElementById("fotoEmpleado").files.length == 0) {
+      Swal.fire({
+        icon: "error",
+        title: "¡Ups!",
+        text: "No se ha cargado ningún archivo",
+      });
+    } else {
+      $.ajax({
+        url: "model/registrarEmpleado.php",
+        data: datos,
+        type: "POST",
+        dataType: "json",
+        contentType: false,
+        processData: false,
+        async: true,
+        cache: false,
+        success: function (data) {
+          if (data.respuesta == "exito") {
+            ingresoExitoso(
+              "¡Exito!",
+              "Se ha subido registrado correctamente la foto del empleado."
+            );
+            setTimeout(function () {
+              window.location.href = "Ver-categoria";
+            }, 1000);
+          } else if (data.respuesta == "error") {
+            respuestaError(
+              "Error!",
+              "Ocurrio un error al registrar al empleado."
+            );
+          } else if (data.respuesta == "noformato") {
+            respuestaError(
+              "Error!",
+              "Debe de elegir una foto con extensión .jpg, .jpeg, .png."
+            );
+          } else if (data.respuesta == "notamano") {
+            respuestaError("Error!", "Debe de elegir un tamaño menor a 4MB.");
+          } else if (data.respuesta == "vacio") {
+            respuestaError("Error!", "Debe de completar los campos.");
+          }
+        },
+      });
+    }
+  });
 });
 
 /*
@@ -105,6 +157,8 @@ $(document).ready(function () {
       correoCliente: { required: true, email: true },
       fenacCliente: { required: true, date: true },
       fechaingCliente: { required: true, date: true },
+      dirCliente: { required: true },
+      ciudadCliente: { required: true, number: true },
     },
     messages: {
       nombreCliente: { required: "Debe de completar los campos." },
@@ -137,6 +191,13 @@ $(document).ready(function () {
         required: "Debe de completar los campos.",
         date: "Selecciona una fecha correcta",
       },
+      dirCliente: {
+        required: "Debe de completar los campos.",
+      },
+      ciudadCliente: {
+        required: "Debe de completar los campos.",
+        number: "Selecciona uno",
+      },
     },
     errorElement: "span",
     errorPlacement: function (error, element) {
@@ -160,6 +221,8 @@ $(document).ready(function () {
         correoCliente: $("#correoCliente").val(),
         fenacCliente: $("#fenacCliente").val(),
         fechaingCliente: $("#fechaingCliente").val(),
+        dirCliente: $("#dirCliente").val(),
+        ciudadCliente: $("#ciudadCliente").val(),
       };
       $.ajax({
         url: "model/registrarCliente.php",
@@ -172,12 +235,12 @@ $(document).ready(function () {
         },
         success: function (data) {
           if (data.respuesta == "exito") {
-            ingresoExitoso("Exito!", "Se registro correctamente el rol.");
+            ingresoExitoso("Exito!", "Se registro correctamente el cliente.");
             setTimeout(function () {
               location.reload();
             }, 1000);
           } else {
-            respuestaError("Error!", "Ocurrio un error al registrar el rol.");
+            respuestaError("Error!", "Ocurrio un error al registrar el cliente.");
           }
         },
       });
@@ -271,8 +334,8 @@ $(document).ready(function () {
   });
 
   /*
-METODO PARA REGISTRAR IMAGEN PRODUCTO
-*/
+  METODO PARA REGISTRAR IMAGEN PRODUCTO
+  */
   $("#FormRegistrarProducto").on("submit", function (e) {
     e.preventDefault();
     var datos = new FormData(this);
@@ -296,7 +359,7 @@ METODO PARA REGISTRAR IMAGEN PRODUCTO
           if (data.respuesta == "exito") {
             ingresoExitoso(
               "¡Exito!",
-              "Se ha subido registrado correctamente la categoria."
+              "Se ha subido registrado correctamente el producto."
             );
             setTimeout(function () {
               window.location.href = "Ver-categoria";
@@ -304,7 +367,7 @@ METODO PARA REGISTRAR IMAGEN PRODUCTO
           } else if (data.respuesta == "error") {
             respuestaError(
               "Error!",
-              "Ocurrio un error al registrar la categoria."
+              "Ocurrio un error al registrar el producto."
             );
           } else if (data.respuesta == "noformato") {
             respuestaError(
