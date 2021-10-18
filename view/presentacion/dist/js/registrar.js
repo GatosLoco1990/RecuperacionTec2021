@@ -82,6 +82,7 @@ $(document).ready(function () {
               location.reload();
             }, 1000);
           } else {
+            
             respuestaError("Error!", "Ocurrio un error al registrar el rol.");
           }
         },
@@ -116,7 +117,7 @@ $(document).ready(function () {
           if (data.respuesta == "exito") {
             ingresoExitoso(
               "¡Exito!",
-              "Se ha subido registrado correctamente la foto del empleado."
+              "Se ha subido registrado correctamente el empleado."
             );
             setTimeout(function () {
               window.location.href = "Ver-categoria";

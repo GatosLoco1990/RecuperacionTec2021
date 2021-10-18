@@ -10,8 +10,8 @@ if (isset($_GET["ubicacion"])) {
         $_GET["ubicacion"] == "Ver-categoria-cliente" || $_GET["ubicacion"] == "Historial-compra" || $_GET["ubicacion"] == "Quienes" ||
         $_GET["ubicacion"] == "Perfil" || $_GET["ubicacion"] == "Registrar-empleado" || $_GET["ubicacion"] == "Registrar-cliente" ||
         $_GET["ubicacion"] == "producto" || $_GET["ubicacion"] == "Registrar-producto" || $_GET["ubicacion"] == "Categoria" || $_GET["ubicacion"] == "Ver-categoria-administrador"
-        || $_GET["ubicacion"] == "certificado" || $_GET["ubicacion"] == "descripcion-pago" || $_GET["ubicacion"] == "descripcion-pago-imprimir"
-        || $_GET["ubicacion"] == "Salir" || $_GET["ubicacion"] == "reporteSucursal"|| $_GET["ubicacion"] == "Ver-empleados"|| $_GET["ubicacion"] == "Ver-clientes"
+        || $_GET["ubicacion"] == "certificado"
+        || $_GET["ubicacion"] == "Salir" || $_GET["ubicacion"] == "Reporte-sucursal" || $_GET["ubicacion"] == "Ver-empleados" || $_GET["ubicacion"] == "Ver-clientes"
         || $_GET["ubicacion"] == "Ver-productos"
     ) { ?>
         <!DOCTYPE html>
@@ -57,20 +57,18 @@ if (isset($_GET["ubicacion"])) {
             <div class="wrapper">
                 <?php
 
-                if ($_GET["ubicacion"] == "descripcion-pago-imprimir") {
-                    include "modulos/navegacion/descripcion-pago-imprimir.php";
-                } else {
 
-                    include "model/conexion.php";
-                    session_start();
-                    include "modulos/header.php";
-                    include "modulos/menu.php";
-                    if (empty($_SESSION['rol'])) {
-                        header("Location: Inicio");
-                    }
-                    include "modulos/navegacion/" . $_GET["ubicacion"] . ".php";
-                    include "modulos/footer.php";
+
+                include "model/conexion.php";
+                session_start();
+                include "modulos/header.php";
+                include "modulos/menu.php";
+                if (empty($_SESSION['rol'])) {
+                    header("Location: Inicio");
                 }
+                include "modulos/navegacion/" . $_GET["ubicacion"] . ".php";
+                include "modulos/footer.php";
+
                 ?>
             </div>
 

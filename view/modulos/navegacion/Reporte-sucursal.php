@@ -45,7 +45,7 @@
                             <!-- /.card-body -->
 
                             <div class="card-footer">
-                                <a href="model/Reporte-Clientes.php">
+                                <a href="model/Reporte-Clientes.php?id=<?php $valores['id_sucursal'] ?>" target="_blank">
                                     <button type="button" class="btn btn-primary">Generar</button>
                                 </a>
                             </div>

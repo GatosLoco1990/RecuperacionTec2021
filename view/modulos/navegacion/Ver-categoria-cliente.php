@@ -57,9 +57,6 @@
 
                                             $_SESSION['id_categoria'] = $row['id_categoria'];
 
-
-
-
                                             echo "
                                             <div class='contenedor'>
                                                 <div class='filtr-item col-sm-2' data-category='1' data-sort='Computadores'>

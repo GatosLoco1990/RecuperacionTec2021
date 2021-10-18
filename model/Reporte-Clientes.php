@@ -5,9 +5,10 @@ include 'conexion.php';
 
 $conexion->query("SET NAMES 'UTF8' ");
 
-//$idsucursal = $_GET['id'];
-//$idempleado = $_GET['id'];
+$idsucursal = $_GET['id'];
 
+date_default_timezone_set('America/Bogota');
+$fecha = date('d-m-Y');
 
 $pdf = new PDF();
 $pdf->AliasNbPages();
@@ -20,15 +21,18 @@ $pdf->SetX(10);
 
 $pdf->SetFont('Arial', 'B', 11);
 $pdf->Cell(40, 24, $pdf->Image('archivos/imagenes/pdf/logo_small_icon_only.png', 17, 15, 25), 1, 0, 'C');
-$pdf->Cell(110, 24, utf8_decode('REPORTE DE CLIENTES SEGÚN SUCURSAL'), 1, 0, 'C');
+$pdf->Cell(110, 24, utf8_decode('REPORTE DE CLIENTES SEGÚN SUCURSAL'. $idsucursal), 1, 0, 'C');
 $pdf->SetFont('Arial', 'B', 8);
 $pdf->MultiCell(50, 6, utf8_decode('CÓDIGO: ss'), 1, 'L');
 $pdf->SetX(160);
 $pdf->MultiCell(50, 6, utf8_decode('VERSIÓN: 01'), 1, 'L');
 $pdf->SetX(160);
-$pdf->Cell(50, 6, utf8_decode('FECHA: '), 1, 1, 'L', 0);
+$pdf->Cell(50, 6, utf8_decode('FECHA: '.$fecha), 1, 1, 'L', 0);
+
 $pdf->SetX(160);
 $pdf->MultiCell(50, 6, utf8_decode('PÁGINAS: 1 de 1'), 1, 'L');
+
+
 
 $pdf->SetFont('Arial', 'B', 9);
 $pdf->Cell(200, 8, utf8_decode('INFORMACIÓN'), 1, 1, 'C', 1);

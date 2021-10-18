@@ -30,7 +30,14 @@
                                 <h3 class="widget-user-username text-right"></h3>
                             </div>
                             <div class="widget-user-image">
-                                <img class="img-circle" src="view/presentacion/dist/img/user3-128x128.jpg" alt="User Avatar">
+                                <?php
+                                if ($_SESSION['rol'] == 1 || ($_SESSION['rol'] == 2)) {
+                                    echo "<img class='img-circle' src='model/" . $_SESSION['imagen'] . "' height='1500px' alt='User Avatar'>";
+                                } else {
+                                    echo "<img class='img-circle' src='view/presentacion/dist/img/AdminLTELogo.png  ' height='1500px' alt='User Avatar'>";
+                                }
+
+                                ?>
                             </div>
                             <div class="card-footer">
                                 <div class="row">
@@ -45,7 +52,7 @@
                                                     <div class="form-group">
                                                         <label>Correo</label>
                                                         <?php
-                                                        echo "<input type='text' class='form-control' placeholder='".$_SESSION['correo'] ."' disabled>"
+                                                        echo "<input type='text' class='form-control' placeholder='" . $_SESSION['correo'] . "' disabled>"
                                                         ?>
                                                     </div>
                                                 </div>
@@ -77,7 +84,7 @@
                                                     <div class="form-group">
                                                         <label>Nombres y apellidos</label>
                                                         <?php
-                                                        echo "<input type='text' class='form-control' placeholder='".$_SESSION['nombre'] . " ".$_SESSION['apellido'] ."' disabled>"
+                                                        echo "<input type='text' class='form-control' placeholder='" . $_SESSION['nombre'] . " " . $_SESSION['apellido'] . "' disabled>"
                                                         ?>
                                                     </div>
                                                 </div>
@@ -86,7 +93,7 @@
                                                     <div class="form-group">
                                                         <label>Tel&eacute;fono</label>
                                                         <?php
-                                                        echo "<input type='text' class='form-control' placeholder='".$_SESSION['telefono'] ."' disabled>"
+                                                        echo "<input type='text' class='form-control' placeholder='" . $_SESSION['telefono'] . "' disabled>"
                                                         ?>
                                                     </div>
                                                 </div>
@@ -94,7 +101,7 @@
                                                     <div class="form-group">
                                                         <label>Direcci&oacute;n</label>
                                                         <?php
-                                                        echo "<input type='text' class='form-control' placeholder='".$_SESSION['direccion'] ."' disabled>"
+                                                        echo "<input type='text' class='form-control' placeholder='" . $_SESSION['direccion'] . "' disabled>"
                                                         ?>
                                                     </div>
                                                 </div>
@@ -102,27 +109,26 @@
                                                     <div class="form-group">
                                                         <label>Ciudad</label>
                                                         <?php
-                                                        echo "<input type='text' class='form-control' placeholder='".$_SESSION['ciudad'] ."' disabled>"
+                                                        echo "<input type='text' class='form-control' placeholder='" . $_SESSION['ciudad'] . "' disabled>"
                                                         ?>
                                                     </div>
                                                 </div>
 
                                                 <?php
 
-                                                if ($_SESSION['rol'] == 1 || $_SESSION['rol'] == 2){
+                                                if ($_SESSION['rol'] == 1 || $_SESSION['rol'] == 2) {
                                                     echo "<div class='col-sm-12'>
                                                     <div class='form-group'>
                                                         <label>Sucursal</label>.
                                                         
-                                                        <input type='text' class='form-control' placeholder='".$_SESSION['sucursal'] ."' disabled>
+                                                        <input type='text' class='form-control' placeholder='" . $_SESSION['sucursal'] . "' disabled>
                                                         
                                                     </div>
                                                 </div>";
-                                                    
                                                 }
 
                                                 ?>
-                                                
+
 
                                             </div>
 

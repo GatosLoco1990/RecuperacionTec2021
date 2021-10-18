@@ -11,7 +11,12 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="view/presentacion/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+          <?php
+          if ($_SESSION['rol'] == 1 || ($_SESSION['rol'] == 2)){
+          echo "<img src='model/".$_SESSION['imagen']."' class='img-circle elevation-2'  alt='profile foto'>";
+          } else
+          echo "<img src='view/presentacion/dist/img/AdminLTELogo.png' class='img-circle elevation-2'  alt='profile foto'>";
+          ?>
         </div>
         <div class="info">
 
@@ -231,6 +236,7 @@
 
               </ul>
             </li>
+            
             <li class="nav-item">
               <a href="#" class="nav-link">
                 <i class="nav-icon fa fa-users fa-fw"></i>
@@ -259,18 +265,26 @@
 
               </ul>
             </li>
-
             <li class="nav-item">
               <a href="reporteSucursal" class="nav-link">
-                <i class="nav-icon fa fa-user fa-fw"></i>
+                <i class="nav-icon fa fa-shopping-cart fa-fw"></i>
+                <p>
+                  Reporte compras 
+                </p>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="Reporte-sucursal" class="nav-link">
+                <i class="nav-icon fa fa-scroll fa-fw"></i>
                 <p>
                   Reporte Sucursal
                 </p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="model/respaldo/respaldo.php" class="nav-link">
-                <i class="nav-icon fa fa-user fa-fw"></i>
+              <a href="model/respaldo.php" class="nav-link">
+                <i class="nav-icon fa fa-database fa-fw"></i>
                 <p>
                   Respaldo base de datos
                 </p>
