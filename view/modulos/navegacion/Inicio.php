@@ -78,7 +78,7 @@ if(isset($_SESSION['rol'])){ //isset = Tener datos adentro
                 <!-- /.social-auth-links -->
 
                 <p class="mb-1">
-                    <a href="model/recordarcontraseña.php">Olvidé mi contraseña</a>
+                    <a href="Recordar-contraseña">Olvidé mi contraseña</a>
                 </p>
                 
             </div>

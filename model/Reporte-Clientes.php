@@ -5,7 +5,7 @@ include 'conexion.php';
 
 $conexion->query("SET NAMES 'UTF8' ");
 
-$idsucursal = $_GET['id'];
+//$idsucursal = $_GET['id'];
 
 date_default_timezone_set('America/Bogota');
 $fecha = date('d-m-Y');
@@ -21,7 +21,7 @@ $pdf->SetX(10);
 
 $pdf->SetFont('Arial', 'B', 11);
 $pdf->Cell(40, 24, $pdf->Image('archivos/imagenes/pdf/logo_small_icon_only.png', 17, 15, 25), 1, 0, 'C');
-$pdf->Cell(110, 24, utf8_decode('REPORTE DE CLIENTES SEGÚN SUCURSAL'. $idsucursal), 1, 0, 'C');
+$pdf->Cell(110, 24, utf8_decode('REPORTE DE CLIENTES -  SUCURSAL'), 1, 0, 'C');
 $pdf->SetFont('Arial', 'B', 8);
 $pdf->MultiCell(50, 6, utf8_decode('CÓDIGO: ss'), 1, 'L');
 $pdf->SetX(160);

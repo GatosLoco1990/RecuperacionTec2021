@@ -447,6 +447,7 @@ $(document).ready(function () {
       Empleado: { required: true, number: true },
       Cliente: { required: true, number: true },
       ModoPago: { required: true, number: true },
+      Producto: { required: true, number: true },
       Cantidad: { required: true, number: true },
       Precio: { required: true, number: true },
       totalPago: { required: true, number: true },
@@ -454,6 +455,7 @@ $(document).ready(function () {
     },
     messages: {
       Empleado: { required: "Debe de completar los campos." },
+      Cliente: { required: "Debe de completar los campos." },
       Cliente: { required: "Debe de completar los campos." },
       ModoPago: {
         required: "Debe de completar los campos.",
@@ -489,6 +491,7 @@ $(document).ready(function () {
         Empleado: $("#Empleado").val(),
         Cliente: $("#Cliente").val(),
         ModoPago: $("#ModoPago").val(),
+        Producto: $("#Producto").val(),
         Cantidad: $("#Cantidad").val(),
         Precio: $("#Precio").val(),
         totalPago: $("#totalPago").val(),

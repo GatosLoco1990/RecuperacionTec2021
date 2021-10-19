@@ -9,6 +9,7 @@ $marca = $row['marca'];
 $precio = $row['precio'];
 $descripcion = $row['desc_producto'];
 $imagen = $row['ruta_imagen'];
+$fecha = date('m/d/Y h:i:s a', time());
 ?>
 
 
@@ -112,11 +113,15 @@ $imagen = $row['ruta_imagen'];
                                                                             </select>
                                                                         </div>
                                                                         <div class="form-group">
+                                                                            <label for="nombre">Producto</label>
+                                                                            <input value="15" type="number" class="form-control" id="Producto" name="Producto" disabled>
+                                                                        </div>
+                                                                        <div class="form-group">
                                                                             <label for="tel">Cantidad</label>
                                                                             <input type="number" class="form-control" id="Cantidad" name="Cantidad" placeholder="Cantidad">
                                                                         </div>
                                                                         <div class="form-group">
-                                                                            <label for="nombre">Precio producto</label>
+                                                                            <label for="nombre">Precio</label>
                                                                             <input value="<?php echo $precio; ?>" type="number" class="form-control" id="Precio" name="Precio" disabled>
                                                                         </div>
 
@@ -146,7 +151,7 @@ $imagen = $row['ruta_imagen'];
                                         </div>
                                         <div class="modal-footer justify-content-between">
                                             <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                                            <button type="button" class="btn btn-primary">Ver ventas</button>
+                                            <a href="Historial-venta"><button type="button" class="btn btn-primary">Ver ventas</button></a>
                                         </div>
                                     </div>
                                     <!-- /.modal-content -->

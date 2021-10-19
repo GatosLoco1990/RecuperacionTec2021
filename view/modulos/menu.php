@@ -265,15 +265,7 @@
 
               </ul>
             </li>
-            <li class="nav-item">
-              <a href="reporteSucursal" class="nav-link">
-                <i class="nav-icon fa fa-shopping-cart fa-fw"></i>
-                <p>
-                  Reporte compras 
-                </p>
-              </a>
-            </li>
-
+           
             <li class="nav-item">
               <a href="Reporte-sucursal" class="nav-link">
                 <i class="nav-icon fa fa-scroll fa-fw"></i>
@@ -291,7 +283,7 @@
               </a>
             </li>
 
-          <?php } ?>
+          <?php }?>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
