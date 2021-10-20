@@ -17,7 +17,13 @@ $query = $conexion->query("SELECT * FROM `producto` where id_categoria = '2' ORD
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="dashboard">Inicio</a></li>
                             <li class="breadcrumb-item"><a href="Ver-categoria-cliente">Ver categorias</a></li>
-                            <li class="breadcrumb-item active">Categoria especifica</li>
+                            <li class="breadcrumb-item active">
+                                <?php
+                                $sql = $conexion->query("SELECT desc_categoria FROM categoria where id_categoria = '$categoria'");
+                                $rown = mysqli_fetch_array($sql);
+                                echo $rown["desc_categoria"];
+                                ?>
+                            </li>
                         </ol>
                     </div>
                 </div>
@@ -58,21 +64,21 @@ $query = $conexion->query("SELECT * FROM `producto` where id_categoria = '2' ORD
                                 <div>
                                     <div class="filter-container p-3 row">
                                         <?php
-                                        
+
                                         while ($row = mysqli_fetch_array($query)) {
                                             echo "
                                             <div class='contenedor'>
                                                 <div class='filtr-item col-sm-2' data-category='1' data-sort='Computadores'>
                                                     <a data-toggle='lightbox' data-title='2'>
                                                         <figure>
-                                                            <img src='model/".$row['ruta_imagen'] ."' class='img-fluid mb-2' width='100px' height='100px' alt='".$row['nom_producto']."' />
+                                                            <img src='model/" . $row['ruta_imagen'] . "' class='img-fluid mb-2' width='100px' height='100px' alt='" . $row['nom_producto'] . "' />
                                                             <div class='capa'>
-                                                                <h3>".$row['nom_producto'] ."</h3>
+                                                                <h3>" . $row['nom_producto'] . "</h3>
                                                                 <p>
                                                                     <a href='producto'><button type='button' class='btn btn-block btn-primary '>Ir</button></a>
                                                                 </p>
 
-                                                                <h3>$".$row['precio'] ."</h3>
+                                                                <h3>$" . $row['precio'] . "</h3>
                                                             </div>
                                                         </figure>
                                                     </a>
