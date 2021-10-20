@@ -57,10 +57,8 @@
                                     <td>" . $row['tel_cliente'] . "</td>
                                     <td>" . $row['correo_cliente'] . "</td>
                                     <td>" . $row['desc_ciudad'] . "</td>
-                                    <td></td>
-                                    
-                                </tr>";
-                                
+                                    <td><a href='model/borrar.php?id_cliente='". $row['id_cliente']."'>Eliminar</a></td>                            
+                                </tr>";                                
                             }
                             ?>
                         </tbody>

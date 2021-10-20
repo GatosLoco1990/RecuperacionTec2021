@@ -26,57 +26,61 @@
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form>
-                            <div class="card-body">
 
+                        <form id="FormRegistrarCompra" name="FormRegistrarCompra" method="POST">
+                            <div class="card-body">
                                 <div class="form-group">
-                                    <label>Documento empleado</label>
-                                    <select class="custom-select">
-                                        <option>1091354158 - RG</option>
-                                        <option>option 2</option>
-                                        <option>option 3</option>
-                                        <option>option 4</option>
-                                        <option>option 5</option>
-                                    </select>
+                                    <label for="nombre">Empleado</label>
+                                    <input value="<?php echo $_SESSION['idemp']; ?>" type="text" class="form-control" id="Empleado" name="Empleado" disabled>
                                 </div>
                                 <div class="form-group">
-                                    <label>Documento cliente</label>
-                                    <select class="custom-select">
-                                        <option>60255264 - MS</option>
-                                        <option>option 2</option>
-                                        <option>option 3</option>
-                                        <option>option 4</option>
-                                        <option>option 5</option>
+                                    <label for="apellido">Cliente</label>
+                                    <select class="custom-select" id="Cliente" name="Cliente">
+                                        <?php
+                                        $query = $conexion->query("SELECT id_cliente , nom_cliente, ape_cliente FROM cliente");
+                                        while ($valores = mysqli_fetch_array($query)) {
+                                            echo '<option value="' . $valores['id_cliente'] . '">' . utf8_encode($valores['nom_cliente']) . " " . utf8_encode($valores['ape_cliente']) . '</option>';
+                                        }
+                                        ?>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="apellido">Modo pago</label>
+                                    <select class="custom-select" id="ModoPago" name="ModoPago">
+                                        <?php
+                                        $query = $conexion->query("SELECT * FROM modopago");
+                                        while ($valores = mysqli_fetch_array($query)) {
+                                            echo '<option value="' . $valores['id_modopago'] . '">' . utf8_encode($valores['metodo']) . '</option>';
+                                        }
+                                        ?>
                                     </select>
                                 </div>
                                 <div class="form-group">
                                     <label>Producto</label>
-                                    <select class="custom-select">
-                                        <option>option 1</option>
-                                        <option>option 2</option>
-                                        <option>option 3</option>
-                                        <option>option 4</option>
-                                        <option>option 5</option>
-                                    </select>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Cantidad</label>
-                                    <input type="number" class="form-control" id="exampleInputEmail1" placeholder="Cantidad">
-                                </div>
-                                <div class="form-group">
-                                    <label>Modo de pago</label>
-                                    <select class="custom-select">
+                                    <select class="custom-select" id="Producto" name="Producto">
                                         <?php
-                                        $query = $conexion->query("SELECT * FROM `modopago`");
+                                        $query = $conexion->query("SELECT * FROM producto");
                                         while ($valores = mysqli_fetch_array($query)) {
-                                            echo '<option value="'.$valores['id_modopago'].'">' . utf8_encode($valores['metodo']). '</option>';
-
+                                            echo '<option value="' . $valores['id_producto'] . '">' . utf8_encode($valores['cod_producto']) . " - " . utf8_encode($valores['nom_producto']) . '</option>';
                                         }
                                         ?>
-
                                     </select>
                                 </div>
+                                <div class="form-group">
+                                    <label for="tel">Cantidad</label>
+                                    <input type="number" class="form-control" id="Cantidad" name="Cantidad" placeholder="Cantidad">
+                                </div>
+                                <div class="form-group">
+                                    <label for="nombre">Precio</label>
+                                    <input value="<?php ?>" type="number" class="form-control" id="Precio" name="Precio" disabled>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="nombre">Total a pagar</label>
+                                    <input value="" type="text" class="form-control" id="totalPago" name="totalPago" disabled>
+                                </div>
+
 
                             </div>
                             <!-- /.card-body -->
@@ -85,6 +89,61 @@
                                 <button type="submit" class="btn btn-primary">Registrar</button>
                             </div>
                         </form>
+                        <form id="FormRegistrarCompra" name="FormRegistrarCompra" method="POST">
+                                                                    <div class="card-body">
+                                                                        <div class="form-group">
+                                                                            <label for="nombre">Empleado</label>
+                                                                            <input value="<?php echo $_SESSION['idemp'];?>" type="text" class="form-control" id="Empleado" name="Empleado" disabled>
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <label for="apellido">Cliente</label>
+                                                                            <select class="custom-select" id="Cliente" name="Cliente">
+                                                                                <?php
+                                                                                $query = $conexion->query("SELECT id_cliente , nom_cliente, ape_cliente FROM cliente");
+                                                                                while ($valores = mysqli_fetch_array($query)) {
+                                                                                    echo '<option value="' . $valores['id_cliente'] . '">' . utf8_encode($valores['nom_cliente']) . " " . utf8_encode($valores['ape_cliente']) . '</option>';
+                                                                                }
+                                                                                ?>
+                                                                            </select>
+                                                                        </div>
+
+                                                                        <div class="form-group">
+                                                                            <label for="apellido">Modo pago</label>
+                                                                            <select class="custom-select" id="ModoPago" name="ModoPago">
+                                                                                <?php
+                                                                                $query = $conexion->query("SELECT * FROM modopago");
+                                                                                while ($valores = mysqli_fetch_array($query)) {
+                                                                                    echo '<option value="' . $valores['id_modopago'] . '">' . utf8_encode($valores['metodo']) . '</option>';
+                                                                                }
+                                                                                ?>
+                                                                            </select>
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <label for="nombre">Producto</label>
+                                                                            <input value="15" type="number" class="form-control" id="Producto" name="Producto" disabled>
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <label for="tel">Cantidad</label>
+                                                                            <input type="number" class="form-control" id="Cantidad" name="Cantidad" placeholder="Cantidad">
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <label for="nombre">Precio</label>
+                                                                            <input value="<?php echo $precio; ?>" type="number" class="form-control" id="Precio" name="Precio" disabled>
+                                                                        </div>
+
+                                                                        <div class="form-group">
+                                                                            <label for="nombre">Total a pagar</label>
+                                                                            <input value="" type="text" class="form-control" id="totalPago" name="totalPago" disabled>
+                                                                        </div>
+
+
+                                                                    </div>
+                                                                    <!-- /.card-body -->
+
+                                                                    <div class="card-footer">
+                                                                        <button type="submit" class="btn btn-primary">Registrar</button>
+                                                                    </div>
+                                                                </form>
                     </div>
                     <!-- /.card -->
                 </div>

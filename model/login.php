@@ -11,7 +11,7 @@ $tipo = $_POST['ingresarTipo'];
 
 if ($tipo == '1' || $tipo == '2') {
 
-    $sql = "SELECT e.nom_emp, e.ape_emp, e.doc_emp, e.mail_emp, e.telefono_emp, e.dir_emp,e.ruta_imagen, s.desc_sucursal, c.desc_ciudad,
+    $sql = "SELECT e.id_emp, e.nom_emp, e.ape_emp, e.doc_emp, e.mail_emp, e.telefono_emp, e.dir_emp,e.ruta_imagen, s.desc_sucursal, c.desc_ciudad,
      e.rol  FROM empleado e INNER JOIN sucursal s on e.id_sucursal = s.id_sucursal INNER JOIN ciudad c on s.id_ciudad = c.id_ciudad 
      WHERE e.mail_emp = '$identificacion' and e.doc_emp = '$contraseña' and e.rol = '$tipo'";
 
@@ -22,6 +22,7 @@ if ($tipo == '1' || $tipo == '2') {
         $row = $ejecutar->fetch_array(MYSQLI_ASSOC);
 
         session_start();
+        $_SESSION['idemp'] = $row['id_emp'];
         $_SESSION['correo'] = $row['mail_emp'];
         $_SESSION['documento'] = $row['doc_emp'];
         $_SESSION['nombre'] = $row['nom_emp'];

@@ -62,9 +62,8 @@
                                                             <div class='capa'>
                                                                 <h3>".$row['desc_categoria'] ."</h3>
                                                                 <p>
-                                                                    <a href='Categoria'><button type='button' class='btn btn-block btn-primary'>Ir</button></a>
+                                                                    <a onclick='verCategoria(" . $row["id_categoria"] . ")'><button type='button' class='btn btn-block btn-primary'>Ir</button></a>
                                                                     <a href='Categoria'><button type='button' class='btn btn-block btn-danger'>Editar</button></a>
-                                                                    
                                                                 </p>
                                                             </div>
                                                         </figure>

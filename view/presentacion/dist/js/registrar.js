@@ -437,3 +437,86 @@ $(document).ready(function () {
     }
   });
 });
+
+/*
+METODO PARA REGISTRAR COMPRA
+*/
+$(document).ready(function () {
+  $("#FormRegistrarCompra").validate({
+    rules: {
+      Empleado: { required: true, number: true },
+      Cliente: { required: true, number: true },
+      ModoPago: { required: true, number: true },
+      Producto: { required: true, number: true },
+      Cantidad: { required: true, number: true },
+      Precio: { required: true, number: true },
+      totalPago: { required: true, number: true },
+      
+    },
+    messages: {
+      Empleado: { required: "Debe de completar los campos." },
+      Cliente: { required: "Debe de completar los campos." },
+      Cliente: { required: "Debe de completar los campos." },
+      ModoPago: {
+        required: "Debe de completar los campos.",
+        number: "Selecciona uno",
+      },
+      Cantidad: {
+        required: "Debe de completar los campos.",
+        number: "Solo se aceptan numeros!",
+      },
+      Precio: {
+        required: "Debe de completar los campos.",
+        number: "Solo se aceptan numeros!",
+      },
+      totalPago: {
+        required: "Debe de completar los campos.",
+        number: "Selecciona uno",
+      },
+     
+    },
+    errorElement: "span",
+    errorPlacement: function (error, element) {
+      error.addClass("invalid-feedback");
+      element.closest(".form-group").append(error);
+    },
+    highlight: function (element, errorClass, validClass) {
+      $(element).addClass("is-invalid");
+    },
+    unhighlight: function (element, errorClass, validClass) {
+      $(element).removeClass("is-invalid");
+    },
+    submitHandler: function () {
+      var datos = {
+        Empleado: $("#Empleado").val(),
+        Cliente: $("#Cliente").val(),
+        ModoPago: $("#ModoPago").val(),
+        Producto: $("#Producto").val(),
+        Cantidad: $("#Cantidad").val(),
+        Precio: $("#Precio").val(),
+        totalPago: $("#totalPago").val(),
+        
+      };
+      $.ajax({
+        url: "model/registrarCompra.php",
+        method: "post",
+        data: datos,
+        dataType: "json",
+        type: "POST",
+        beforeSend: function () {
+          respuestaInfoEspera("Registrando... ¡Espere por favor!");
+        },
+        success: function (data) {
+          if (data.respuesta == "exito") {
+            ingresoExitoso("Exito!", "Se registro correctamente la compra.");
+            setTimeout(function () {
+              location.reload();
+            }, 1000);
+          } else {
+            respuestaError("Error!", "Ocurrio un error al registrar la compra.");
+          }
+        },
+      });
+    },
+  });
+});

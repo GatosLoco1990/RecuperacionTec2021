@@ -36,14 +36,14 @@
                                 <th>Sucursal</th>
                                 <th>Ciudad</th>
                                 <th>Imagen</th>
-                                <th>Acciones</th>
+                                <th>Rol</th>
 
                             </tr>
                         </thead>
                         <tbody>
                             <?php
 
-                            $query = $conexion->query("SELECT e.id_emp, e.nom_emp, e.ape_emp, e.doc_emp, e.telefono_emp, e.mail_emp,e.imagen, s.desc_sucursal, c.desc_ciudad FROM empleado e INNER JOIN sucursal s ON s.id_sucursal = e.id_sucursal INNER JOIN ciudad c ON c.id_ciudad = s.id_ciudad");
+                            $query = $conexion->query("SELECT e.id_emp, e.nom_emp,e.ruta_imagen, e.ape_emp, e.doc_emp, e.telefono_emp, e.mail_emp,e.imagen, s.desc_sucursal, c.desc_ciudad, r.descripcion FROM empleado e INNER JOIN sucursal s ON s.id_sucursal = e.id_sucursal INNER JOIN ciudad c ON c.id_ciudad = s.id_ciudad INNER JOIN rol r on r.id = e.rol");
                             while ($row = mysqli_fetch_array($query)) {
 
                                 if ($row['id_emp'] != 10) {
@@ -57,8 +57,8 @@
                                         <td>" . $row['mail_emp'] . "</td>
                                         <td>" . $row['desc_sucursal'] . "</td>
                                         <td>" . $row['desc_ciudad'] . "</td>
-                                        <td>" . $row['imagen'] . "</td>
-                                        <td>" . $row['imagen'] . "</td>
+                                        <td><img src='model/".$row['ruta_imagen']."' width='100' height='100' /> </td>
+                                        <td>" . $row['descripcion'] . "</td>
                                     </tr>";
                                 }
                             }

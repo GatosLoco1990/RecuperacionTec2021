@@ -12,7 +12,7 @@ if (isset($_GET["ubicacion"])) {
         $_GET["ubicacion"] == "producto" || $_GET["ubicacion"] == "Registrar-producto" || $_GET["ubicacion"] == "Categoria" || $_GET["ubicacion"] == "Ver-categoria-administrador"
         || $_GET["ubicacion"] == "certificado"
         || $_GET["ubicacion"] == "Salir" || $_GET["ubicacion"] == "Reporte-sucursal" || $_GET["ubicacion"] == "Ver-empleados" || $_GET["ubicacion"] == "Ver-clientes"
-        || $_GET["ubicacion"] == "Ver-productos"
+        || $_GET["ubicacion"] == "Ver-productos" || $_GET["ubicacion"] == "Reporte-compras" 
     ) { ?>
         <!DOCTYPE html>
         <html lang="es">
@@ -56,8 +56,6 @@ if (isset($_GET["ubicacion"])) {
         <body class="hold-transition sidebar-mini layout-fixed">
             <div class="wrapper">
                 <?php
-
-
 
                 include "model/conexion.php";
                 session_start();
@@ -132,6 +130,7 @@ if (isset($_GET["ubicacion"])) {
 
             <!-- Registrar JS-->
             <script src="view/presentacion/dist/js/registrar.js"></script>
+            <script src="view/presentacion/dist/js/ver.js"></script>
             <!-- Page specific script agregar archivo-->
             <script>
                 $(function() {

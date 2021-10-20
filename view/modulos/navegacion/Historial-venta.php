@@ -19,36 +19,7 @@
     <section class="content">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-12">
-                    <div class="card card-primary">
-                        <div class="card-header">
-                            <h3 class="card-title">Historial venta</h3>
-                        </div>
-                        <!-- /.card-header -->
-                        <!-- form start -->
-                        <form>
-                            <div class="card-body">
-
-                                <div class="form-group">
-                                    <label>Documento empleado</label>
-                                    <select class="custom-select">
-                                        <option>1091354158 - RG</option>
-                                        <option>option 2</option>
-                                        <option>option 3</option>
-                                        <option>option 4</option>
-                                        <option>option 5</option>
-                                    </select>
-
-                                </div>
-                                <!-- /.card-body -->
-                            </div>
-                            <div class="card-footer">
-                                <button type="submit" class="btn btn-primary">Buscar</button>
-                            </div>
-                        </form>
-                    </div>
-                    <!-- /.card -->
-                </div>
+                
             </div>
             <div class="card">
                 <div class="card-header">
@@ -59,28 +30,36 @@
                     <table id="example1" class="table table-bordered table-striped">
                         <thead>
                             <tr>
-                                <th>Id</th>
-                                <th>Fecha</th>
-                                <th>Producto</th>
-                                <th>Cantidad</th>
+                                <th>Id factura</th>
                                 <th>Cliente</th>
-                                <th>Precio unitario</th>
-                                <th>Subototal</th>
-                                <th>Estado</th>
+                                <th>Modopago </th>
+                                <th>Fecha Pago</th>
+                                <th>Total</th>
+                                <th>Acciones</th>
+
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>17/07/2021</td>
-                                <td>ZapatoPro</td>
-                                <td>4</td>
-                                <td>Armando Flores</td>
-                                <td>2000</td>
-                                <td>8000</td>
-                                <td>Enviado</td>
-                            </tr>
-                        </tbody>    
+                            <?php
+                            $empleado = $_SESSION['idemp'];
+
+                            $query = $conexion->query("SELECT f.id_fact, f.id_modopago, f.id_cliente, f.fecha_pago, f.total_pagar, m.metodo, c.nom_cliente, c.ape_cliente FROM factura f inner join modopago m on m.id_modopago = f.id_modopago INNER JOIN cliente c on c.id_cliente = f.id_cliente where f.id_emp = $empleado");
+                            while ($row = mysqli_fetch_array($query)) {
+
+
+                                echo "
+                                <tr>
+                                    <td>" . $row['id_fact'] . "</td>
+                                    <td>" . $row['nom_cliente'] . " " . $row['ape_cliente'] . "</td>
+                                    <td>" . $row['metodo'] . "</td>
+                                    <td>" . $row['fecha_pago'] . "</td>
+                                    <td>" . $row['total_pagar'] . "</td>
+                                    <td></td>
+                                    
+                                </tr>";
+                            }
+                            ?>
+                        </tbody>
                     </table>
                 </div>
                 <!-- /.card-body -->

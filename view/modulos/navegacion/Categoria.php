@@ -1,6 +1,7 @@
 <?php
 
-$query = $conexion->query("SELECT * FROM `producto` where id_categoria = '2' ORDER BY `nom_producto` ASC");
+$categoria = $_SESSION['categoria'];
+$query = $conexion->query("SELECT * FROM producto where id_categoria = '$categoria' ORDER BY nom_producto ASC");
 ?>
 
 
@@ -51,8 +52,8 @@ $query = $conexion->query("SELECT * FROM `producto` where id_categoria = '2' ORD
 
                                         <div class="float-right">
                                             <select class="custom-select" style="width: auto;" data-sortOrder>
-                                                <option value="index"> Seleccionar </option>
-                                                <option value="sortData"> Alfabeticamente </option>
+                                                <option value="index"> Alfabeticamente </option>
+                                                <option value="sortData"> Precio </option>
                                             </select>
                                             <div class="btn-group">
                                                 <a class="btn btn-default" href="javascript:void(0)" data-sortAsc> Ascendente </a>
@@ -68,14 +69,14 @@ $query = $conexion->query("SELECT * FROM `producto` where id_categoria = '2' ORD
                                         while ($row = mysqli_fetch_array($query)) {
                                             echo "
                                             <div class='contenedor'>
-                                                <div class='filtr-item col-sm-2' data-category='1' data-sort='Computadores'>
+                                                <div class='filtr-item col-sm-2' data-category='1' data-sort='".$row['precio']."'>
                                                     <a data-toggle='lightbox' data-title='2'>
                                                         <figure>
                                                             <img src='model/" . $row['ruta_imagen'] . "' class='img-fluid mb-2' width='100px' height='100px' alt='" . $row['nom_producto'] . "' />
                                                             <div class='capa'>
                                                                 <h3>" . $row['nom_producto'] . "</h3>
                                                                 <p>
-                                                                    <a href='producto'><button type='button' class='btn btn-block btn-primary '>Ir</button></a>
+                                                                    <a onclick='verProducto(" . $row["id_producto"] . ")'><button type='button' class='btn btn-block btn-primary '>Ir</button></a>
                                                                 </p>
 
                                                                 <h3>$" . $row['precio'] . "</h3>
