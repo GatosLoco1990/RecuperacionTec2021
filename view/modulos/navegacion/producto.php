@@ -1,6 +1,6 @@
 <?php
 
-$sql = "SELECT * FROM `producto` WHERE id_producto = '15'";
+$sql = "SELECT * FROM `producto` WHERE id_producto = '16'";
 $ejecutar = mysqli_query($conexion, $sql);
 $row = $ejecutar->fetch_array(MYSQLI_ASSOC);
 

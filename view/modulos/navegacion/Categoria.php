@@ -1,6 +1,6 @@
 <?php
 
-$query = $conexion->query("SELECT * FROM `producto` where id_categoria = '2' ORDER BY `nom_producto` ASC");
+$query = $conexion->query("SELECT * FROM `producto` where id_categoria = '6' ORDER BY `nom_producto` ASC");
 ?>
 
 

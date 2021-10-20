@@ -1,6 +1,6 @@
 <?php
 if (isset($_GET["ubicacion"])) {
-    if ($_GET["ubicacion"] == "Inicio" || $_GET["ubicacion"] == "Recordar-contraseña") {
+    if ($_GET["ubicacion"] == "Inicio") {
         include "model/conexion.php";
         include "modulos/navegacion/" . $_GET["ubicacion"] . ".php";
     } else if (

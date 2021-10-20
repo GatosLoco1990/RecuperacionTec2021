@@ -72,15 +72,7 @@ if(isset($_SESSION['rol'])){ //isset = Tener datos adentro
                         <div class="col-3"> </div>
                         <!-- /.col -->
                     </div>
-                </form>
-
-
-                <!-- /.social-auth-links -->
-
-                <p class="mb-1">
-                    <a href="Recordar-contraseña">Olvidé mi contraseña</a>
-                </p>
-                
+                </form>                              
             </div>
             <!-- /.card-body -->
         </div>
