@@ -1,6 +1,7 @@
 <?php
 
-$query = $conexion->query("SELECT * FROM `producto` where id_categoria = '6' ORDER BY `nom_producto` ASC");
+$categoria = $_SESSION['categoria'];
+$query = $conexion->query("SELECT * FROM producto where id_categoria = '$categoria' ORDER BY nom_producto ASC");
 ?>
 
 
@@ -69,7 +70,7 @@ $query = $conexion->query("SELECT * FROM `producto` where id_categoria = '6' ORD
                                                             <div class='capa'>
                                                                 <h3>".$row['nom_producto'] ."</h3>
                                                                 <p>
-                                                                    <a href='producto'><button type='button' class='btn btn-block btn-primary '>Ir</button></a>
+                                                                    <a onclick='verProducto(" . $row["id_producto"] . ")'><button type='button' class='btn btn-block btn-primary '>Ir</button></a>
                                                                 </p>
 
                                                                 <h3>$".$row['precio'] ."</h3>

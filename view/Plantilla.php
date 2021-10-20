@@ -130,6 +130,7 @@ if (isset($_GET["ubicacion"])) {
 
             <!-- Registrar JS-->
             <script src="view/presentacion/dist/js/registrar.js"></script>
+            <script src="view/presentacion/dist/js/ver.js"></script>
             <!-- Page specific script agregar archivo-->
             <script>
                 $(function() {

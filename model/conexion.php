@@ -1,7 +1,11 @@
 <?php
 
 try{
-
+    /*
+    $cleardb_server = "localhost";
+    $cleardb_username = "root";
+    $cleardb_password = "";
+    $cleardb_db = "jgandica_recbd";*/
     
     //Get Heroku ClearDB connection information
     
